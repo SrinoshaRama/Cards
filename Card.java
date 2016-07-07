@@ -6,5 +6,11 @@ public class Card {
 		this.suit = suit;
 	}
 	
+	public char getPip() {
+		return this.pip;
+	}
 	
+	public char getSuit() {
+		return this.suit;
+	}
 }
