@@ -13,4 +13,12 @@ public class Card {
 	public char getSuit() {
 		return this.suit;
 	}
+	
+	public String compareTo(Card obj) {
+		if ("CDHS".indexOf(this.suit) * 13 + "23456789TJQKA".indexOf(this.pip) > "CDHS".indexOf(obj.suit) 					* 13 + "23456789TJQKA".indexOf(obj.pip)) {
+			return "greater";
+		} else {
+			return "smaller";
+		}
+	}
 }
