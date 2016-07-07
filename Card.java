@@ -1,24 +1,14 @@
 public class Card {
-	char pip;
-	char suit;
-	public Card(char pip, char suit) {
-		this.pip = pip;
-		this.suit = suit;
+	int seq;
+	public Card(int seq) {
+		this.seq = seq;
 	}
 	
 	public char getPip() {
-		return this.pip;
+		return "23456789TJQKA".charAt(this.seq % 13);
 	}
 	
 	public char getSuit() {
-		return this.suit;
-	}
-	
-	public String compareTo(Card obj) {
-		if ("CDHS".indexOf(this.suit) * 13 + "23456789TJQKA".indexOf(this.pip) > "CDHS".indexOf(obj.suit) 					* 13 + "23456789TJQKA".indexOf(obj.pip)) {
-			return "greater";
-		} else {
-			return "smaller";
-		}
+		return "CDHS".charAt(this.seq / 13);
 	}
 }
