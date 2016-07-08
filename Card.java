@@ -11,4 +11,8 @@ public class Card {
 	public char getSuit() {
 		return "CDHS".charAt(this.seq / 13);
 	}
+	
+	public String toString() {
+		return String.valueOf(this.seq);
+	}
 }
