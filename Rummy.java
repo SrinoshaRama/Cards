@@ -28,4 +28,10 @@ public class Deck {
 	
 	public Card getTopCard(){
 		this.deck[cardsInPlay].setInPlay(true);
+	
+	public void shuffle(){
+
+		Collections.shuffle(deck);
+		}
+	}
 		
