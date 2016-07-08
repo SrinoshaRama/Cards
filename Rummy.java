@@ -1,49 +1,14 @@
-import java.util.*;
-public class Deck {	
-	
-	private Card[] deck = new Card[52];
-	public int cardsInPlay = 0;
-	
-	Deck(){
-		int i = 0;
-		for(Rank r : Rank.values()){
-			for(Suit s : Suit.values()){
-				deck[i++] = (new Card(r,s));
-			}
-		}
-	}
-	public Card[] getDeck(){
-		return this.deck;
-	}
-	
-	public Card[] getStartingHand(){
-		Card[] startingHand = new Card[14];
-		for(int i=0; i<13; i++){
-			startingHand[i] = deck[i];
-			deck[i].setInPlay(true);
-		}
-		this.cardsInPlay = 13;
-		return startingHand;
-	}
-	
-	public Card getTopCard(){
-		this.deck[cardsInPlay].setInPlay(true);
-	
-	public void shuffle(){
+import java.util.ArrayList;
 
-		Collections.shuffle(deck);
+
+public class Rummy {
+	ArrayList<Player> players = new ArrayList<Player>();
+	final ArrayList<Card> pack = new ArrayList<Card>() {{
+		for (int i = 2; i < 52; ++i) {
+		add(new Card(i));
 		}
-	}
-	public void printDeck(){
-		String isInPlay = "";
-		for(int i=0; i < this.deck.length; i++){
-			if(deck[i].getInPlay()) {
-				isInPlay = "in play";}
-			else {
-				isInPlay = "not in play";}
-			
-			System.out.println("Card: " + this.deck[i].getRank() + " of " + this.deck[i].getSuit() + " is " + isInPlay); 
-		}
-	}
+		add(new Card(100));
+		add(new Card(100));
+	}};
+	
 }
-		
