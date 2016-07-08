@@ -34,4 +34,16 @@ public class Deck {
 		Collections.shuffle(deck);
 		}
 	}
+	public void printDeck(){
+		String isInPlay = "";
+		for(int i=0; i < this.deck.length; i++){
+			if(deck[i].getInPlay()) {
+				isInPlay = "in play";}
+			else {
+				isInPlay = "not in play";}
+			
+			System.out.println("Card: " + this.deck[i].getRank() + " of " + this.deck[i].getSuit() + " is " + isInPlay); 
+		}
+	}
+}
 		
